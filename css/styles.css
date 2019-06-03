@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
 
-* {
+:root {
+    --red:  rgb(231, 56, 56);
+}
+
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -9,11 +13,13 @@
 body {
     background: white;
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: rgba(0,0,0,0.85)
+    justify-content: space-between;
+    color: rgba(0,0,0,0.85);
+    height: 100vh;
 }
 
 nav {
@@ -21,7 +27,7 @@ nav {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 2em 0 1.5em;
+    margin: 4em 0;
 }
 
 nav ul {
@@ -44,18 +50,31 @@ nav ul li {
 }
 
 nav ul li a {
-    color: rgb(231, 56, 56);
+    color: var(--red);
     text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+    color: var(--red);
+}
+
+a:visited {
+    color: rgb(150, 22, 22);
 }
 
 a:hover {
     color: unset;
 }
 
-nav 
+
+
+footer {
+    margin-bottom: 4em;
+}
 
 h1 {
-    font-size: 15rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
     margin-top: 0;
@@ -75,11 +94,45 @@ p {
 }
 
 .main-content {
-    width: 75vw;
-    max-width: 850px;
+    width: 70vw;
+    min-height: 10rem;
+    max-width: 750px;
     background: white;
     box-shadow: 0 0 30px -5px rgba(0,0,0,0.15);
-    padding: 3rem;
+    padding: 3rem 4rem;
     margin: 1rem 0 3rem;
     border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.previous {
+    margin-left: 1rem;
+}
+
+.next {
+    margin-right: 1rem;
+}
+
+.previous::after {
+    content: ' \2039';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    font-size: 2rem;
+}
+
+.next::after {
+    content: ' \203A';
+    position: absolute;
+    right: 0;
+    bottom: -6px;
+    font-size: 2rem;
 }
