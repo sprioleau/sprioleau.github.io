@@ -42,7 +42,7 @@ nav ul {
 nav ul,
 nav li {
     font-weight: 700;
-    padding: 0 1rem;
+    padding: 0 1.25em;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -168,6 +168,10 @@ p {
 
     nav {
         margin: 2em 0;
+    }
+
+    nav li{
+        padding: 0 0.25em;
     }
 
     .main-content {
